@@ -8,9 +8,9 @@ const progressContainer = document.querySelector('.progress-container');
 const title = document.querySelector('#title');
 const cover = document.querySelector('#cover');
 
-const songs = ['Carry on Wayward Son'];
+const songs = ['Carry on Wayward Son','You Make Me Feel','Girls Just Want to Have Fun'];
 
-let songIndex = 0;
+let songIndex = 2;
 
 loadSong(songs[songIndex]);
 
