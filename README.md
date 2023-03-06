@@ -1,6 +1,4 @@
-# music_display
-
-# :octocat: snakegame :snake:
+# :octocat: music_display 🎧
 
 
 <img src="images/image.JPG"/>
