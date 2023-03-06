@@ -10,14 +10,14 @@ const cover = document.querySelector('#cover');
 
 const songs = ['Carry on Wayward Son','You Make Me Feel','Girls Just Want to Have Fun'];
 
-let songIndex = 2;
+let songIndex = 0;
 
 loadSong(songs[songIndex]);
 
 function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+  cover.src = `images/${song}.JPG`;
 }
 
 function playSong(){
@@ -29,7 +29,7 @@ function playSong(){
 }
 
 function pauseSong(){
-  musicContainer.classList.add('play');
+  musicContainer.classList.remove('play');
   playBtn.querySelector('i.fas').classList.add('fa-play');
   playBtn.querySelector('i.fas').classList.remove('fa-pause');
 
@@ -46,3 +46,5 @@ playBtn.addEventListener('click', () => {
   }
 })
 
+prevBtn.addEventListener('click', prevSong)
+nextBtn.addEventListener('click', nextSong)
