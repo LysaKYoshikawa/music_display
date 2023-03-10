@@ -72,6 +72,9 @@ function setProgress(e){
   const width = this.clientWitdth
   const clickX = e.offsetX
   const duration = audio.duration
+  console.log('width: ',width)
+  console.log('clickX: ',clickX)
+  console.log('duration: ',duration)
 
   audio.currentTime = (clickX / width) * duration
   console.log('Aqui',width)
