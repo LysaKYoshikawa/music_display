@@ -1,5 +1,3 @@
-@import url('https: //fonts.googleapis.com/css?family=Lato&display=swap');
-
 * {
   box-sizing: border-box;
 }
@@ -13,8 +11,31 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Lato', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+}
+
+.player {
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.wapper {
+  border: 1px solid transparent;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .music-container {
@@ -99,19 +120,7 @@ body {
   outline: 0;
 }
 
-.music-info {
-  background-color: rgba(228, 19, 19, 0.5);
-  border-radius: 15px 15px 0 0;
-  position: absolute;
-  top: 0;
-  left: 20px;
-  width: calc(100% - 40px);
-  padding: 10px 10px 10px 150px;
-  opacity: 0;
-  transform: translateY(0%);
-  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
-  z-index: 0;
-}
+
 
 .music-container.play .music-info {
   opacity: 1;
