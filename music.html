@@ -25,30 +25,24 @@
         <div class="music-info">
           <h1 class="now-playing">Music Player</h1>
           <div class="track-art"></div>
-          <div class="track-name">Carry on</div>
+          <div class="track-name">Carry on Wayward Son</div>
           <div class="track-artist">Kansas</div>
           <div class="progress-container">
             <div class="progress"></div>
           </div>
         </div>
 
-        <audio src="music/Carry on Wayward Son.mp3" id="audio"></audio>
-
-        <div class="img-container">
-          <img src="images/Carry on Wayward Son.JPG" alt="music-cover" id="cover" />
-        </div>
-
         <div class="navigation">
           <div class="radom-track" onclick="randomTrack()">
             <i class="fas fa-random fa-2x" title="random"></i>
           </div>
-          <div id="prev" class="prev-track">
+          <div id="prev" class="prev-track" onclick="prevSong()">
             <i class="fas fa-backward fa-2x"></i>
           </div>
-          <div id="play" class="playpause-track">
+          <div id="play" class="playpause-track" onclick="playSong()">
             <i class="fas fa-play fa-2x"></i>
           </div>
-          <div id="next" class="next-track">
+          <div id="next" class="next-track" onclick="prevSong()">
             <i class="fas fa-forward fa-2x"></i>
           </div>
         </div>
