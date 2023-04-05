@@ -21,6 +21,7 @@ body {
   border: 1px solid transparent;
   padding: 30px;
   border-radius: 20px;
+  background-color: #ddd;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -71,6 +72,7 @@ body {
   color: black;
 }
 
+.repeat-track,
 .radom-track,
 .prev-track,
 .playpause-track,
@@ -80,13 +82,12 @@ body {
   transition: opacity .2s;
 }
 
+.repeat-track:hover,
 .radom-track:hover,
 .prev-track:hover,
 .playpause-track:hover,
 .next-track:hover {
-  padding: 25px;
-  opacity: 0.8;
-  transition: opacity .2s;
+  opacity: 1.0;
 }
 
 .slider_container {
