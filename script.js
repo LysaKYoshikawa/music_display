@@ -139,16 +139,13 @@ function pauseSong(){
 
 
 function prevSong(){
-  songIndex--
-
   if(songIndex > 0){
     songIndex -= 1;
   }else{
     songIndex = songsList.length -1;
   }
 
-  loadSong(songsList[songIndex]);
-
+  loadSong(songIndex);
   playSong();
 }
 
