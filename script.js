@@ -1,51 +1,48 @@
 const nowPlaying = document.querySelector('.now-playing');
-const trackName = document.querySelector('.track-name');
-const trackArt = document.querySelector('.track-art');
-const trackArtist = document.querySelector('.track-artist');
+const dataName = document.querySelector('.music-name');
+const trackArt = document.querySelector('.music-art');
+const dataArtist = document.querySelector('.music-artist');
 
-const musicContainer = document.querySelector('.music-container');
-const playBtn = document.querySelector('#play');
-const prevBtn = document.querySelector('#prev');
-const nextBtn = document.querySelector('#next');
-const audio = document.querySelector('#audio');
+const playBtn = document.querySelector('.playpause-track');
+const prevBtn = document.querySelector('.prev-track');
+const nextBtn = document.querySelector('.next-track');
+
 const progress = document.querySelector('.progress');
 const progressContainer = document.querySelector('.progress-container');
-const title = document.querySelector('#title');
-const cover = document.querySelector('#cover');
 
 const seekSlider = document.querySelector('.seek_slider');
-const volume = document.querySelector('.volume_slider');
-const currentTime = document.querySelector('.current-time');
+const volumeSlider = document.querySelector('.volume_slider');
+const currTime = document.querySelector('.current-time');
 const totalDuration = document.querySelector('.total-duration');
-const wave = document.querySelector('wave');
+const wave = document.getElementById('wave');
 const randomIcon = document.querySelector('.fa-random');
 const currentSong = document.createElement('audio');
 
-const songsList = [
-  {
-    img : 'images/Carry on Wayward Son.JPG',
-    name : 'Carry on Wayward Son',
-    artist : 'Kansas',
-    music : 'music/Carry on Wayward Son.mp3'
-  },
-  {
-    img : 'images/Girls Just Want to Have Fun.JPG',
-    name : 'Girls Just Want to Have Fun',
-    artist : 'Cyndi Lauper',
-    music : 'music/Girls Just Want to Have Fun.mp3'
-  },
-  {
-    img : 'images/You Make Me Feel.JPG',
-    name : 'You Make Me Feel',
-    artist : 'Sylvester',
-    music : 'music/You Make Me Feel.mp3'
-  }
-];
-
-let songIndex = 2;
+let songIndex = 0;
 let isPlaying = false;
 let isRandom = false;
 let updateTimer;
+
+const songsList = [
+  {
+    img : 'images/Carry.png',
+    name : 'Carry on Wayward Son',
+    artist : 'Kansas',
+    music : 'music/Carry.mp3'
+  },
+  {
+    img : 'images/Girls.png',
+    name : 'Girls Just Want to Have Fun',
+    artist : 'Cyndi Lauper',
+    music : 'music/Girls.mp3'
+  },
+  {
+    img : 'images/You.png',
+    name : 'You Make Me Feel',
+    artist : 'Sylvester',
+    music : 'music/You.mp3'
+  }
+];
 
 loadSong(songIndex);
 
@@ -53,17 +50,19 @@ function loadSong(songIndex) {
   clearInterval(updateTimer);
   reset()
 
-  audio.src = songsList[songIndex].music;
-  audio.load();
+  currentSong.src = songsList[songIndex].music;
+  
+  currentSong.load();
+  console.log(currentSong)
 
   trackArt.style.background = "url(" + songsList[songIndex].img + ")";
-  trackName.textContent = songsList[songIndex].name;
-  trackArtist.textContent = songsList[songIndex].artist;
+  dataName.textContent = songsList[songIndex].name;
+  dataArtist.textContent = songsList[songIndex].artist;
   nowPlaying.textContent = "Tocando musica " + (songIndex + 1) + "de" + songsList.length;
   
   updateTimer = setInterval(setUpdate, 1000);
 
-  currentSong.addEventListener('ended', nextTrack)
+  currentSong.addEventListener('ended', nextSong)
   random_bg_color();
 }
 
@@ -95,19 +94,18 @@ function random_bg_color(){
 }
 
 function reset(){
-    currentTime.textContent = "00:00";
+    currTime.textContent = "00:00";
     totalDuration.textContent = "00:00";
     seekSlider.value = 0;
 }
 
 function randomTrack(){
-
   isRandom ? pauseRandom() : playRandom();
 }
 
 function playRandom(){
-    isRandom = true;
-    randomIcon.classList.add('randomActive');
+  isRandom = true;
+  randomIcon.classList.add('randomActive');
 }
 
 function pauseRandom(){
@@ -122,7 +120,7 @@ function repeatTrack(){
 }
 
 function playpauseSong(){
-    isPlaying ? pauseSong() : playSong();
+  isPlaying ? pauseSong() : playSong();
 }
 
 function playSong(){
@@ -130,18 +128,16 @@ function playSong(){
   isPlaying = true
   trackArt.classList.add('rotate');
   wave.classList.add('loader');
-  musicContainer.classList.add('play');
   playBtn.innerHTML = '<i class="fas fa-pause fa-2x"></i>';
 
 }
 
 function pauseSong(){
   currentSong.pause();
-  trackArt.classList.add('rotate');
-  wave.classList.add('loader');
-  musicContainer.classList.add('play');
+  isPlaying = false;
+  trackArt.classList.remove('rotate');
+  wave.classList.remove('loader');
   playBtn.innerHTML = '<i class="fas fa-play fa-2x"></i>';
-
 }
 
 
@@ -160,8 +156,6 @@ function prevSong(){
 }
 
 function nextSong(){
-  songIndex++
-
   if(songIndex < songsList.length -1 && isRandom === false){
     songIndex += 1;
   }else if(songIndex < songsList.length -1 && isRandom === true){
@@ -171,7 +165,7 @@ function nextSong(){
     songIndex = 0;
   }
 
-  loadSong(songsList[songIndex]);
+  loadSong(songIndex);
   playSong();
 
 }
@@ -182,11 +176,10 @@ function seekTo(){
 }
 
 function setVolume(){
-    currentSong.volume = volume.value / 100;
+    currentSong.volume = volumeSlider.value / 100;
 }
 
-function updateProgress(e){
-  
+function updateProgress(){
   let seekPosition = 0;
     if(!isNaN(currentSong.duration)){
         seekPosition = currentSong.currentTime * (100 / currentSong.duration);
@@ -202,7 +195,7 @@ function updateProgress(e){
         if(currentMinutes < 10) {currentMinutes = "0" + currentMinutes; }
         if(durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
 
-        currentTime.textContent = currentMinutes + ":" + currentSeconds;
+        currTime.textContent = currentMinutes + ":" + currentSeconds;
         totalDuration.textContent = durationMinutes + ":" + durationSeconds;
     }
 }
