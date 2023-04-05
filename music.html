@@ -19,31 +19,31 @@
     <div class="wrapper">
       <div class="music-container play">
         <div class="music-info">
-          <h1 class="now-playing">Music Player</h1>
+          <h4 class="now-playing">Music Player</h4>
           <div class="music-art"></div>
-          <div class="music-name">Track Name</div>
-          <div class="music-artist">Track Artist</div>
+          <h1 class="music-name">Track Name</h1>
+          <h2 class="music-artist">Track Artist</h2>
           <div class="progress-container">
             <div class="progress"></div>
           </div>
         </div>
 
         <div class="navigation">
-          <div class="radom-track" onclick="randomTrack()">
+          <button class="radom-track" onclick="randomTrack()">
             <i class="fas fa-random fa-2x" title="random"></i>
-          </div>
-          <div id="prev" class="prev-track" onclick="prevSong()">
+          </button>
+          <button id="prev" class="prev-track" onclick="prevSong()">
             <i class="fas fa-backward fa-2x"></i>
-          </div>
-          <div id="play" class="playpause-track" onclick="playpauseSong()">
+          </button>
+          <button id="play" class="playpause-track" onclick="playpauseSong()">
             <i class="fas fa-play fa-2x"></i>
-          </div>
-          <div id="next" class="next-track" onclick="nextSong()">
+          </button>
+          <button id="next" class="next-track" onclick="nextSong()">
             <i class="fas fa-forward fa-2x"></i>
-          </div>
-          <div class="repeat-track" onclick="repeatSong()">
+          </button>
+          <button class="repeat-track" onclick="repeatSong()">
             <i class="fa fa-repeat fa-2x" title="repeat"></i>
-          </div>
+          </button>
         </div>
 
         <div class="slider_container">

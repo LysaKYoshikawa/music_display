@@ -66,6 +66,7 @@ body {
   flex-direction: row;
   align-items: center;
   margin-bottom: 30px;
+  justify-content: center;
 }
 
 .active {
@@ -80,6 +81,8 @@ body {
   padding: 25px;
   opacity: 0.8;
   transition: opacity .2s;
+  background-color: #ddd;
+  border: none
 }
 
 .repeat-track:hover,
