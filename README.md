@@ -3,9 +3,6 @@
 
 <img src="images/image.JPG"/>
 
-
-
-
   #  :rocket: Sobre o Projeto
 
 Music Player é um player de uma playlist ja existente.
