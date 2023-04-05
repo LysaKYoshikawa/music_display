@@ -7,9 +7,6 @@ const playBtn = document.querySelector('.playpause-track');
 const prevBtn = document.querySelector('.prev-track');
 const nextBtn = document.querySelector('.next-track');
 
-const progress = document.querySelector('.progress');
-const progressContainer = document.querySelector('.progress-container');
-
 const seekSlider = document.querySelector('.seek_slider');
 const volumeSlider = document.querySelector('.volume_slider');
 const currTime = document.querySelector('.current-time');
