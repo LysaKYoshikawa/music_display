@@ -110,7 +110,7 @@ function pauseRandom(){
     randomIcon.classList.remove('randomActive');
 }
 
-function repeatTrack(){
+function repeatSong(){
     let index = songIndex;
     loadSong(index);
     playSong();

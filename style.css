@@ -171,6 +171,7 @@ i.fa-backward {
 }
 
 .loader {
+  margin-top: 20px;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -182,7 +183,7 @@ i.fa-backward {
   height: 150%;
   width: 10px;
   border-radius: 50px;
-  margin: 0px 50px;
+  margin: 0 5px;
   animation: animate 1.4s linear infinite;
 }
 
