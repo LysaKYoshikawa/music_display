@@ -55,10 +55,8 @@ function loadSong(songIndex) {
   trackArt.style.background = "url(" + songsList[songIndex].img + ")";
   dataName.textContent = songsList[songIndex].name;
   dataArtist.textContent = songsList[songIndex].artist;
-  nowPlaying.textContent = "Tocando musica " + (songIndex + 1) + "de" + songsList.length;
+  nowPlaying.textContent = "Tocando musica " + (songIndex + 1) + " de " + songsList.length;
   
-  updateTimer = setInterval(setUpdate, 1000);
-
   currentSong.addEventListener('ended', nextSong)
   random_bg_color();
 }
@@ -69,25 +67,30 @@ function loadSong(songIndex) {
 // pensar em um index mais dinâmico.
 // add a lista de musicas do lado
 // ler e entender funções anonimas
+// Container  quem vai organizar os blocos com grid vc vai colcoar que x bloco tera x tamanho.
+// barra e o volume fazer a barra de progresso para ela mudar de cor conforme segue.
+// funfar esse botão aleatorio
+//player um pouco transparente 20% fundo css blur
+//psdoclasses
 
 function random_bg_color(){
-    let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
-    let a;
+  let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
+  let a;
 
-    function populate(a){
-        for(let i=0; i<6; i++){
-            let x = Math.round(Math.random() * 14);
-            let y = hex[x];
-            a += y;
-        }
-        return a;
+  function populate(a){
+    for(let i=0; i<6; i++){
+      let x = Math.round(Math.random() * 14);
+      let y = hex[x];
+      a += y;
     }
-    let Color1 = populate('#');
-    let Color2 = populate('#');
-    var angle = 'to right';
+    return a;
+  }
+  let Color1 = populate('#');
+  let Color2 = populate('#');
+  var angle = 'to right';
 
-    let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ")";
-    document.body.style.background = gradient;
+  let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ")";
+  document.body.style.background = gradient;
 }
 
 function reset(){
@@ -161,7 +164,6 @@ function nextSong(){
 
   loadSong(songIndex);
   playSong();
-
 }
 
 function seekTo(){
