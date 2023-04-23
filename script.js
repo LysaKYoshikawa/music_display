@@ -62,9 +62,9 @@ function loadSong(songIndex) {
 }
 
 // Colocar em uma função esse topico 
-// melhorar a semantic do html trocando as div pelo seu respectivo tags container pode ser section 
+// Feito - melhorar a semantic do html trocando as div pelo seu respectivo tags container pode ser section 
 // Texto ser um texto padrão ex vazio
-// pensar em um index mais dinâmico.
+// Fazer junto com Tolloti - pensar em um index mais dinâmico.
 // add a lista de musicas do lado
 // ler e entender funções anonimas
 // Container  quem vai organizar os blocos com grid vc vai colcoar que x bloco tera x tamanho.
