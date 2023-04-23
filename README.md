@@ -14,7 +14,6 @@ Music Player é um player de uma playlist ja existente.
 - [x] Events t players music local
 - [x] HTML of the app
 - [x] add two musics 
-- [ ] search api
 
 
 # :pushpin: Tecnologias Ultilizadas

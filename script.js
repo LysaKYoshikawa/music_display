@@ -7,9 +7,6 @@ const playBtn = document.querySelector('.playpause-track');
 const prevBtn = document.querySelector('.prev-track');
 const nextBtn = document.querySelector('.next-track');
 
-const progress = document.querySelector('.progress');
-const progressContainer = document.querySelector('.progress-container');
-
 const seekSlider = document.querySelector('.seek_slider');
 const volumeSlider = document.querySelector('.volume_slider');
 const currTime = document.querySelector('.current-time');
@@ -58,39 +55,42 @@ function loadSong(songIndex) {
   trackArt.style.background = "url(" + songsList[songIndex].img + ")";
   dataName.textContent = songsList[songIndex].name;
   dataArtist.textContent = songsList[songIndex].artist;
-  nowPlaying.textContent = "Tocando musica " + (songIndex + 1) + "de" + songsList.length;
+  nowPlaying.textContent = "Tocando musica " + (songIndex + 1) + " de " + songsList.length;
   
-  updateTimer = setInterval(setUpdate, 1000);
-
   currentSong.addEventListener('ended', nextSong)
   random_bg_color();
 }
 
 // Colocar em uma função esse topico 
-// melhorar a semantic do html trocando as div pelo seu respectivo tags container pode ser section 
+// Feito - melhorar a semantic do html trocando as div pelo seu respectivo tags container pode ser section 
 // Texto ser um texto padrão ex vazio
-// pensar em um index mais dinâmico.
+// Fazer junto com Tolloti - pensar em um index mais dinâmico.
 // add a lista de musicas do lado
 // ler e entender funções anonimas
+// Container  quem vai organizar os blocos com grid vc vai colcoar que x bloco tera x tamanho.
+// barra e o volume fazer a barra de progresso para ela mudar de cor conforme segue.
+// funfar esse botão aleatorio
+//player um pouco transparente 20% fundo css blur
+//psdoclasses
 
 function random_bg_color(){
-    let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
-    let a;
+  let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
+  let a;
 
-    function populate(a){
-        for(let i=0; i<6; i++){
-            let x = Math.round(Math.random() * 14);
-            let y = hex[x];
-            a += y;
-        }
-        return a;
+  function populate(a){
+    for(let i=0; i<6; i++){
+      let x = Math.round(Math.random() * 14);
+      let y = hex[x];
+      a += y;
     }
-    let Color1 = populate('#');
-    let Color2 = populate('#');
-    var angle = 'to right';
+    return a;
+  }
+  let Color1 = populate('#');
+  let Color2 = populate('#');
+  var angle = 'to right';
 
-    let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ")";
-    document.body.style.background = gradient;
+  let gradient = 'linear-gradient(' + angle + ',' + Color1 + ', ' + Color2 + ")";
+  document.body.style.background = gradient;
 }
 
 function reset(){
@@ -113,7 +113,7 @@ function pauseRandom(){
     randomIcon.classList.remove('randomActive');
 }
 
-function repeatTrack(){
+function repeatSong(){
     let index = songIndex;
     loadSong(index);
     playSong();
@@ -142,16 +142,13 @@ function pauseSong(){
 
 
 function prevSong(){
-  songIndex--
-
   if(songIndex > 0){
     songIndex -= 1;
   }else{
     songIndex = songsList.length -1;
   }
 
-  loadSong(songsList[songIndex]);
-
+  loadSong(songIndex);
   playSong();
 }
 
@@ -167,7 +164,6 @@ function nextSong(){
 
   loadSong(songIndex);
   playSong();
-
 }
 
 function seekTo(){
