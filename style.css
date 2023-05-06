@@ -6,10 +6,12 @@ body {
 
 .player {
   height: 95vh;
-  display: flex;
+  display: grid;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
 
 }
 
@@ -20,6 +22,24 @@ body {
   background-color: #ddd;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   transition: width .25s, height .25s;
+}
+
+.wrapper-list {
+  display: grid;
+  border: 1px solid transparent;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #5d1cd6;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.music-box {
+  border: 1px;
+  border-color: #ddd;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #766a8b;
+  margin-top: 10px;
 }
 
 .music-info {
@@ -36,13 +56,18 @@ body {
   border: 2px solid #fff;
   background-size: cover;
   background-position: center;
-  border-radius: 50%;
-  -moz-box-shadow: 0px 6px 5px black;
+  border-radius: 70%;
   -webkit-box-shadow: 0px 6px 5px black;
-  box-shadow: 0px 6px 5px black;
-  -moz-border-radius: 190px;
-  -webkit-border-radius: 190px;
-  border-radius: 190px;
+}
+
+.art-fig {
+  margin: 20px;
+  height: 100px;
+  width: 100px;
+  border: 2px solid #fff;
+  background-size: cover;
+  background-position: center;
+  border-radius: 70%;
 }
 
 .now-playing {

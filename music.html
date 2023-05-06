@@ -16,67 +16,95 @@
 
 <body>
   <div class="player">
-    <div class="wrapper">
-      <div class="music-container play">
-        <div class="music-info">
-          <h4 class="now-playing">Music Player</h4>
-          <div class="music-art"></div>
-          <h1 class="music-name">Track Name</h1>
-          <h2 class="music-artist">Track Artist</h2>
-          <div class="progress-container">
-            <div class="progress"></div>
+    <section>
+      <div class="wrapper">
+        <div class="music-container play">
+          <div class="music-info">
+            <h4 class="now-playing">Music Player</h4>
+            <div class="music-art"></div>
+            <h1 class="music-name">Track Name</h1>
+            <h2 class="music-artist">Track Artist</h2>
+            <div class="progress-container">
+              <div class="progress"></div>
+            </div>
+          </div>
+  
+          <div class="navigation">
+            <button class="radom-track" onclick="randomTrack()">
+              <i class="fas fa-random fa-2x" title="random"></i>
+            </button>
+            <button id="prev" class="prev-track" onclick="prevSong()">
+              <i class="fas fa-backward fa-2x"></i>
+            </button>
+            <button id="play" class="playpause-track" onclick="playpauseSong()">
+              <i class="fas fa-play fa-2x"></i>
+            </button>
+            <button id="next" class="next-track" onclick="nextSong()">
+              <i class="fas fa-forward fa-2x"></i>
+            </button>
+            <button class="repeat-track" onclick="repeatSong()">
+              <i class="fa fa-repeat fa-2x" title="repeat"></i>
+            </button>
+          </div>
+  
+          <div class="slider_container">
+            <div class="current-time">00:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <div class="total-duration">00:00</div>
+          </div>
+  
+          <div class="slider_container">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+            <i class="fa fa-volume-up"></i>
+          </div>
+  
+          <div id="wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
           </div>
         </div>
-
-        <div class="navigation">
-          <button class="radom-track" onclick="randomTrack()">
-            <i class="fas fa-random fa-2x" title="random"></i>
-          </button>
-          <button id="prev" class="prev-track" onclick="prevSong()">
-            <i class="fas fa-backward fa-2x"></i>
-          </button>
-          <button id="play" class="playpause-track" onclick="playpauseSong()">
-            <i class="fas fa-play fa-2x"></i>
-          </button>
-          <button id="next" class="next-track" onclick="nextSong()">
-            <i class="fas fa-forward fa-2x"></i>
-          </button>
-          <button class="repeat-track" onclick="repeatSong()">
-            <i class="fa fa-repeat fa-2x" title="repeat"></i>
-          </button>
-        </div>
-
-        <div class="slider_container">
-          <div class="current-time">00:00</div>
-          <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-          <div class="total-duration">00:00</div>
-        </div>
-
-        <div class="slider_container">
-          <i class="fas fa-volume-down"></i>
-          <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-          <i class="fa fa-volume-up"></i>
-        </div>
-
-        <div id="wave">
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-          <span class="stroke"></span>
-        </div>
+  
+        
+  
       </div>
 
-      <section>
+    </section>
+    
 
+    <section>
+      <div class="wrapper-list">
+        <h1>Lista de musica</h1>
+        <div class="music-box"> 
+          <figure>
+            <img class="art-fig" src="images/Carry.png"/>
+            <figcaption>content</figcaption>
+          </figure>
+          <h2 class="music-art-list">Carry on Wayward Son</h2>
+        </div>
+        <div class="music-box">
+          <figure>
+            <img class="art-fig" src="images/Girls.png"/>
+          </figure> 
+          <h2>Girls Just Want to Have Fun</h2>
+        </div>
+        <div class="music-box">
+          <figure >
+            <img class="art-fig"src="images/You.png"/>
+          </figure> 
+          <h2>You Make Me Feel</h2>
+        </div>
+      
+      </div>
 
-      </section>
+    </section>
 
-      <script src="script.js"></script>
-
-    </div>
+    <script src="script.js"></script>
 
 
   </div>
