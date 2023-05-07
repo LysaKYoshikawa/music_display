@@ -50,7 +50,6 @@ function loadSong(songIndex) {
   currentSong.src = songsList[songIndex].music;
   
   currentSong.load();
-  console.log(currentSong)
 
   trackArt.style.background = "url(" + songsList[songIndex].img + ")";
   dataName.textContent = songsList[songIndex].name;
@@ -114,10 +113,27 @@ function playpauseSong(){
 
 function playSong(){
   currentSong.play();
+  console.log('É  current',currentSong)
   isPlaying = true
   trackArt.classList.add('rotate');
   wave.classList.add('loader');
   playBtn.innerHTML = '<i class="fas fa-pause fa-2x"></i>';
+
+}
+
+function playListSong(index){
+  currentSong.src = songsList[index].music;
+  console.log('aqui',currentSong)
+  currentSong.play();
+  console.log('É  current',currentSong)
+  isPlaying = true
+  trackArt.classList.add('rotate');
+  wave.classList.add('loader');
+  playBtn.innerHTML = '<i class="fas fa-pause fa-2x"></i>';
+
+  trackArt.style.background = "url(" + songsList[index].img + ")";
+  dataName.textContent = songsList[index].name;
+  dataArtist.textContent = songsList[index].artist;
 
 }
 
