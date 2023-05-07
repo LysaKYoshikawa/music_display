@@ -123,9 +123,9 @@ function playSong(){
 
 function playListSong(index){
   currentSong.src = songsList[index].music;
-  console.log('aqui',currentSong)
+  
   currentSong.play();
-  console.log('É  current',currentSong)
+  
   isPlaying = true
   trackArt.classList.add('rotate');
   wave.classList.add('loader');
