@@ -17,7 +17,7 @@
 <body>
   <div class="player">
     <section>
-      <div class="wrapper">
+      <div class="wrapper wrapper--music-info">
         <div class="music-container play">
           <div class="music-info">
             <h4 class="now-playing">Music Player</h4>
@@ -28,7 +28,7 @@
               <div class="progress"></div>
             </div>
           </div>
-  
+
           <div class="navigation">
             <button class="radom-track" onclick="randomTrack()">
               <i class="fas fa-random fa-2x" title="random"></i>
@@ -46,19 +46,19 @@
               <i class="fa fa-repeat fa-2x" title="repeat"></i>
             </button>
           </div>
-  
-          <div class="slider_container">
+
+          <div class="slider-container">
             <div class="current-time">00:00</div>
-            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <input type="range" min="1" max="100" value="0" class="seek-slider" onchange="seekTo()">
             <div class="total-duration">00:00</div>
           </div>
-  
-          <div class="slider_container">
+
+          <div class="slider-container">
             <i class="fas fa-volume-down"></i>
-            <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+            <input type="range" min="1" max="100" value="99" class="volume-slider" onchange="setVolume()">
             <i class="fa fa-volume-up"></i>
           </div>
-  
+
           <div id="wave">
             <span class="stroke"></span>
             <span class="stroke"></span>
@@ -69,50 +69,50 @@
             <span class="stroke"></span>
           </div>
         </div>
-  
-        
-  
+
+
+
       </div>
 
     </section>
-    
+
 
     <section>
-      <div class="wrapper-list">
-        <h1>Lista de musica</h1>
-        <div class="music-box"> 
-          
-          <img class="art-fig" src="images/Carry.png"/>
-          
+      <div class="wrapper wrapper--list">
+        <h3>Lista de musica</h3>
+        <div class="music-box">
+
+          <img class="art-fig" src="images/Carry.png" />
+
           <div class="grid-item">
             <h2 class="title-list">Carry on Wayward Son</h2>
             <button id="play" class="playpause-track" onclick="playListSong('0')">
-            <i class="fas fa-play fa-2x"></i>
+              <i class="fas fa-play fa-2x"></i>
           </div>
-          
+
         </div>
 
         <div class="music-box">
-          
-          <img class="art-fig" src="images/Girls.png"/>
-          
+
+          <img class="art-fig" src="images/Girls.png" />
+
           <div class="grid-item">
             <h2 class="title-list">Girls Just Want to Have Fun</h2>
             <button id="play" class="playpause-track" onclick="playListSong('1')">
-            <i class="fas fa-play fa-2x"></i>
+              <i class="fas fa-play fa-2x"></i>
           </div>
-          
+
         </div>
 
         <div class="music-box">
-          <img class="art-fig"src="images/You.png"/>
+          <img class="art-fig" src="images/You.png" />
           <div class="grid-item">
             <h2 class="title-list">You Make Me Feel</h2>
             <button id="play" class="playpause-track" onclick="playListSong('2')">
-            <i class="fas fa-play fa-2x"></i>
+              <i class="fas fa-play fa-2x"></i>
           </div>
         </div>
-      
+
       </div>
 
     </section>

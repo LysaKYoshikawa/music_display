@@ -7,8 +7,8 @@ const playBtn = document.querySelector('.playpause-track');
 const prevBtn = document.querySelector('.prev-track');
 const nextBtn = document.querySelector('.next-track');
 
-const seekSlider = document.querySelector('.seek_slider');
-const volumeSlider = document.querySelector('.volume_slider');
+const seekSlider = document.querySelector('.seek-slider');
+const volumeSlider = document.querySelector('.volume-slider');
 const currTime = document.querySelector('.current-time');
 const totalDuration = document.querySelector('.total-duration');
 const wave = document.getElementById('wave');
