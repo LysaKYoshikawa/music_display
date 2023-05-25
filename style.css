@@ -4,11 +4,14 @@ body {
   font-weight: bold;
 }
 
+:root {
+  --main-bg-color: #fff;
+  --border-color: #ddd;
+}
+
 .player {
   height: 95vh;
   display: grid;
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +21,7 @@ body {
 }
 
 .wrapper {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   padding: 30px;
   border-radius: 20px;
   background-color: transparent;
@@ -38,7 +41,7 @@ body {
   margin: 25px;
   height: 250px;
   width: 250px;
-  border: 2px solid #fff;
+  border: 2px solid var(--border-color);
   background-size: cover;
   background-position: center;
   border-radius: 70%;
@@ -103,7 +106,7 @@ body {
   -moz-appearance: none;
   appearance: none;
   height: 5px;
-  background: #4d76d4;
+  background: rgb(56, 56, 190);
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
@@ -115,7 +118,7 @@ body {
   appearance: none;
   width: 15px;
   height: 15px;
-  background: #fff;
+  background: var(--main-bg-color);
   border: 3px solid rgb(56, 56, 190);
   cursor: pointer;
   border-radius: 100%;
@@ -180,7 +183,7 @@ i.fa-backward {
 }
 
 .loader .stroke {
-  background: #f1f1f1;
+  background: var(--main-bg-color);
   height: 150%;
   width: 10px;
   border-radius: 50px;
@@ -230,7 +233,7 @@ i.fa-backward {
 
 .music-list {
   border: 1px solid transparent;
-  background-color: #ddd;
+  background-color: var(--main-bg-color);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   width: 100px;
   height: 100px;
@@ -260,7 +263,7 @@ i.fa-backward {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   padding: 10px;
   background-color: transparent;
   margin-top: 10px;
@@ -278,7 +281,7 @@ i.fa-backward {
   margin-right: auto;
   height: 100px;
   width: 100px;
-  border: 2px solid #fff;
+  border: 2px solid var(--border-color);
   background-size: cover;
   background-position: center;
   border-radius: 70%;

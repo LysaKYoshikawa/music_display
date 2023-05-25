@@ -1,4 +1,4 @@
-const nowPlaying = document.querySelector('.now-playing');
+const nowPlaying = document.querySelector('.nowslider-playing');
 const dataName = document.querySelector('.music-name');
 const trackArt = document.querySelector('.music-art');
 const dataArtist = document.querySelector('.music-artist');
@@ -25,19 +25,22 @@ const songsList = [
     img : 'images/Carry.png',
     name : 'Carry on Wayward Son',
     artist : 'Kansas',
-    music : 'music/Carry.mp3'
+    music : 'music/Carry.mp3',
+    time : '05:23'
   },
   {
     img : 'images/Girls.png',
     name : 'Girls Just Want to Have Fun',
     artist : 'Cyndi Lauper',
-    music : 'music/Girls.mp3'
+    music : 'music/Girls.mp3',
+    time : '03:54'
   },
   {
     img : 'images/You.png',
     name : 'You Make Me Feel',
     artist : 'Sylvester',
-    music : 'music/You.mp3'
+    music : 'music/You.mp3',
+    time : '06:39'
   }
 ];
 
@@ -82,9 +85,10 @@ function random_bg_color(){
 }
 
 function reset(){
-    currTime.textContent = "00:00";
-    totalDuration.textContent = "00:00";
-    seekSlider.value = 0;
+  const time = songsList[songIndex].time
+  currTime.textContent = "00:00";
+  totalDuration.textContent = time;
+  seekSlider.value = 0;
 }
 
 function randomTrack(){
@@ -113,7 +117,6 @@ function playpauseSong(){
 
 function playSong(){
   currentSong.play();
-  console.log('É  current',currentSong)
   isPlaying = true
   trackArt.classList.add('rotate');
   wave.classList.add('loader');
