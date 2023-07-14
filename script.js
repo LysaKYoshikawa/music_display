@@ -1,4 +1,4 @@
-const nowPlaying = document.querySelector('.now-playing');
+const nowPlaying = document.querySelector('.nowslider-playing');
 const dataName = document.querySelector('.music-name');
 const trackArt = document.querySelector('.music-art');
 const dataArtist = document.querySelector('.music-artist');
@@ -7,8 +7,8 @@ const playBtn = document.querySelector('.playpause-track');
 const prevBtn = document.querySelector('.prev-track');
 const nextBtn = document.querySelector('.next-track');
 
-const seekSlider = document.querySelector('.seek_slider');
-const volumeSlider = document.querySelector('.volume_slider');
+const seekSlider = document.querySelector('.seek-slider');
+const volumeSlider = document.querySelector('.volume-slider');
 const currTime = document.querySelector('.current-time');
 const totalDuration = document.querySelector('.total-duration');
 const wave = document.getElementById('wave');
@@ -25,19 +25,22 @@ const songsList = [
     img : 'images/Carry.png',
     name : 'Carry on Wayward Son',
     artist : 'Kansas',
-    music : 'music/Carry.mp3'
+    music : 'music/Carry.mp3',
+    time : '05:23'
   },
   {
     img : 'images/Girls.png',
     name : 'Girls Just Want to Have Fun',
     artist : 'Cyndi Lauper',
-    music : 'music/Girls.mp3'
+    music : 'music/Girls.mp3',
+    time : '03:54'
   },
   {
     img : 'images/You.png',
     name : 'You Make Me Feel',
     artist : 'Sylvester',
-    music : 'music/You.mp3'
+    music : 'music/You.mp3',
+    time : '06:39'
   }
 ];
 
@@ -50,7 +53,6 @@ function loadSong(songIndex) {
   currentSong.src = songsList[songIndex].music;
   
   currentSong.load();
-  console.log(currentSong)
 
   trackArt.style.background = "url(" + songsList[songIndex].img + ")";
   dataName.textContent = songsList[songIndex].name;
@@ -61,17 +63,6 @@ function loadSong(songIndex) {
   random_bg_color();
 }
 
-// Colocar em uma função esse topico 
-// Feito - melhorar a semantic do html trocando as div pelo seu respectivo tags container pode ser section 
-// Texto ser um texto padrão ex vazio
-// Fazer junto com Tolloti - pensar em um index mais dinâmico.
-// add a lista de musicas do lado
-// ler e entender funções anonimas
-// Container  quem vai organizar os blocos com grid vc vai colcoar que x bloco tera x tamanho.
-// barra e o volume fazer a barra de progresso para ela mudar de cor conforme segue.
-// funfar esse botão aleatorio
-//player um pouco transparente 20% fundo css blur
-//psdoclasses
 
 function random_bg_color(){
   let hex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e'];
@@ -94,9 +85,10 @@ function random_bg_color(){
 }
 
 function reset(){
-    currTime.textContent = "00:00";
-    totalDuration.textContent = "00:00";
-    seekSlider.value = 0;
+  const time = songsList[songIndex].time
+  currTime.textContent = "00:00";
+  totalDuration.textContent = time;
+  seekSlider.value = 0;
 }
 
 function randomTrack(){
@@ -129,6 +121,22 @@ function playSong(){
   trackArt.classList.add('rotate');
   wave.classList.add('loader');
   playBtn.innerHTML = '<i class="fas fa-pause fa-2x"></i>';
+
+}
+
+function playListSong(index){
+  currentSong.src = songsList[index].music;
+  
+  currentSong.play();
+  
+  isPlaying = true
+  trackArt.classList.add('rotate');
+  wave.classList.add('loader');
+  playBtn.innerHTML = '<i class="fas fa-pause fa-2x"></i>';
+
+  trackArt.style.background = "url(" + songsList[index].img + ")";
+  dataName.textContent = songsList[index].name;
+  dataArtist.textContent = songsList[index].artist;
 
 }
 
