@@ -7,6 +7,7 @@
 
 body {
   background-image: url("images/background-tokio-2.jpg");
+  background-attachment: fixed;
   font-weight: bold;
   background-size: cover;
 }
@@ -15,29 +16,29 @@ body {
   --main-bg-color: #fff;
   --border-color: #ddd;
   --font-family: Arial, Helvetica, sans-serif;
+  --unid-px: 100px;
 }
 
 .player {
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
-
 }
 
 .player__bg-blur {
-  padding: 30px;
-  border: 5px solid var(--border-color);
+  padding: 10px;
+  border: 2px solid var(--border-color);
   background-color: transparent;
   backdrop-filter: blur(10px);
+  margin: var(--unid-px);
 }
 
 .player__container {
   display: grid;
+  justify-content: center;
   padding: 30px;
   gap: 10px;
   flex-direction: column;
-  grid-template-columns: auto auto;
+  grid-template-columns: 600px 400px;
   grid-column: 2;
 
 }
@@ -69,6 +70,8 @@ body {
   background-position: center;
   border-radius: 70%;
   -webkit-box-shadow: 0px 6px 5px black;
+  -moz-box-shadow: 2px 2px 4px #000;
+  box-shadow: 2px 2px 4px #000;
 }
 
 
@@ -260,8 +263,8 @@ i.fa-backward {
   border: 1px solid transparent;
   background-color: var(--main-bg-color);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  width: 100px;
-  height: 100px;
+  width: var(--unid-px);
+  height: var(--unid-px);
   display: inline-block;
 }
 
@@ -292,7 +295,7 @@ i.fa-backward {
   padding: 10px;
   background-color: transparent;
   margin-top: 10px;
-  height: 100px;
+  height: var(--unid-px);
   width: auto;
 }
 
@@ -304,8 +307,8 @@ i.fa-backward {
   display: block;
   grid-column: 1;
   margin-right: auto;
-  height: 100px;
-  width: 100px;
+  height: var(--unid-px);
+  width: var(--unid-px);
   border: 2px solid var(--border-color);
   background-size: cover;
   background-position: center;
@@ -318,6 +321,6 @@ i.fa-backward {
 
 .button-play {
   margin-right: center;
-  height: 100px;
-  width: 100px;
+  height: var(--unid-px);
+  width: var(--unid-px);
 }
